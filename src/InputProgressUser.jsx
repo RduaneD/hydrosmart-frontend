@@ -71,7 +71,7 @@ export default function InputProgressUser() {
     const newProgress = { image, title, description, date };
 
     try {
-      const response = await fetch("https://hydrosmart-backend-production.up.railway.app/progress", {
+      const response = await fetch("https://hydro-backend-production.up.railway.app/progress", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProgress),
