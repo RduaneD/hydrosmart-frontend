@@ -18,7 +18,7 @@ export default function EditProgressUser() {
   const id = new URLSearchParams(window.location.search).get("id");
 
   useEffect(() => {
-    fetch(`https://hydrosmart-backend-production.up.railway.app/progress/${id}`)
+    fetch(`https://hydro-backend-production.up.railway.app/progress/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error("Gagal mengambil data progres");
         return res.json();
@@ -41,7 +41,7 @@ export default function EditProgressUser() {
     const updated = { image, date, title, description };
 
     try {
-      const response = await fetch(`https://hydrosmart-backend-production.up.railway.app/progress/${id}`, {
+      const response = await fetch(`https://hydro-backend-production.up.railway.app/progress/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
