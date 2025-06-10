@@ -3,7 +3,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Link } from 'react-router-dom'; // ⬅️ Tambahkan ini
+import { Link } from 'react-router-dom';
 
 import card1Img from '../assets/cards/card1.png';
 import card2Img from '../assets/cards/card2.jpg';
@@ -37,8 +37,8 @@ export default function Hero() {
 
   return (
     <>
-      {/* === Carousel Atas (mobile/tablet) === */}
-      <section className="md:hidden px-4 pt-10 pb-6 bg-white order-first">
+      {/* === Carousel Atas (hanya tampil di mobile) === */}
+      <section className="block sm:hidden px-4 pt-10 pb-6 bg-white order-first">
         <Swiper
           modules={[Autoplay, Pagination]}
           spaceBetween={20}
@@ -65,7 +65,6 @@ export default function Hero() {
           ))}
         </Swiper>
 
-        {/* Tombol login mobile */}
         <div className="mt-6 text-center">
           <Link
             to="/login"
@@ -76,8 +75,8 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* === Hero Section (desktop & tablet) === */}
-      <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-10 py-20 bg-gradient-to-r from-green-200 via-white to-white overflow-hidden">
+      {/* === Hero Section (hanya tampil di tablet & desktop) === */}
+      <section className="hidden sm:flex relative flex-col-reverse md:flex-row items-center justify-between px-6 md:px-10 py-20 bg-gradient-to-r from-green-200 via-white to-white overflow-hidden">
         {/* Background Glow */}
         <div className="absolute -top-16 -left-16 w-96 h-96 bg-green-100 opacity-40 rounded-full blur-3xl pointer-events-none z-0"></div>
 
@@ -105,7 +104,7 @@ export default function Hero() {
         />
       </section>
 
-      {/* === Carousel Bawah (desktop) === */}
+      {/* === Carousel Bawah (hanya tampil di desktop & tablet) === */}
       <section className="hidden md:block px-6 md:px-10 py-16 bg-white">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
