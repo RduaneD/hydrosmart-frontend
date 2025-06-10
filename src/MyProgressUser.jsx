@@ -16,7 +16,7 @@ export default function MyProgressUser() {
   const [progressList, setProgressList] = useState([]);
 
   useEffect(() => {
-    fetch("https://hydrosmart-backend-production.up.railway.app/progress")
+    fetch("https://hydro-backend-production.up.railway.app/progress")
       .then((res) => {
         if (!res.ok) throw new Error("Gagal mengambil data progres");
         return res.json();
@@ -32,7 +32,7 @@ export default function MyProgressUser() {
     if (!window.confirm("Yakin ingin menghapus progres ini?")) return;
 
     try {
-      const response = await fetch(`https://hydrosmart-backend-production.up.railway.app/progress/${id}`, {
+      const response = await fetch(`https://hydro-backend-production.up.railway.app/progress/${id}`, {
         method: "DELETE",
       });
 
