@@ -11,7 +11,7 @@ export default function ArticleCard({ id, title, image, excerpt, onClick }) {
     const checkIfSaved = async () => {
       try {
         const response = await axios.get(
-          `https://hydrosmart-backend-production.up.railway.app/api/saved-articles/${id}`
+          `https://hydro-backend-production.up.railway.app/api/saved-articles/${id}`
         );
         setSaved(response.data.isSaved); // respons berisi boolean isSaved
       } catch (error) {
@@ -29,12 +29,12 @@ export default function ArticleCard({ id, title, image, excerpt, onClick }) {
     try {
       if (saved) {
         // Jika artikel sudah disimpan, maka hapus dari database
-        await axios.delete("https://hydrosmart-backend-production.up.railway.app/api/saved-articles", {
+        await axios.delete("https://hydro-backend-production.up.railway.app/api/saved-articles", {
           data: { id },
         });
       } else {
         // Jika belum disimpan, maka simpan ke database
-        await axios.post("https://hydrosmart-backend-production.up.railway.app/api/saved-articles", {
+        await axios.post("https://hydro-backend-production.up.railway.app/api/saved-articles", {
           id,
           title,
           image,
