@@ -98,7 +98,7 @@ const PlantRecommendationPage = () => {
     setError("");
 
     try {
-      const response = await fetch("https://hydrosmart-backend-production.up.railway.app/api/recommendation", {
+      const response = await fetch("https://hydro-backend-production.up.railway.app/api/recommendation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
