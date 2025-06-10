@@ -10,7 +10,7 @@ export default function SavedArticles() {
   useEffect(() => {
     const fetchSavedArticles = async () => {
       try {
-        const response = await axios.get("hydro-backend-production.up.railway.app/api/saved-articles");
+        const response = await axios.get("https://hydro-backend-production.up.railway.app/api/saved-articles");
         const data = Array.isArray(response.data) ? response.data : [];
         setSavedArticles(data);
       } catch (error) {
