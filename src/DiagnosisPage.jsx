@@ -29,7 +29,7 @@ export default function DiagnosisPage() {
       const formData = new FormData();
       formData.append("image", imageFile);
 
-      const response = await fetch("https://hydrosmart-backend-production.up.railway.app/diagnosis", {
+      const response = await fetch("https://hydro-backend-production.up.railway.app/diagnosis", {
         method: "POST",
         body: formData,
       });
