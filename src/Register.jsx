@@ -19,7 +19,7 @@ export default function Register() {
     }
 
     try {
-      await axios.post("hydro-backend-production.up.railway.app/register", {
+      await axios.post("https://hydro-backend-production.up.railway.app/register", {
         name: nama,
         email,
         password
