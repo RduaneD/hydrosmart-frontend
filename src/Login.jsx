@@ -11,7 +11,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://hydrosmart-backend-production.up.railway.app/login", {
+      const response = await axios.post("https://hydro-backend-production.up.railway.app/login", {
         email,
         password,
       });
