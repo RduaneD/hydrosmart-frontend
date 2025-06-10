@@ -3,6 +3,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { Link } from 'react-router-dom'; // ⬅️ Tambahkan ini
 
 import card1Img from '../assets/cards/card1.png';
 import card2Img from '../assets/cards/card2.jpg';
@@ -44,7 +45,7 @@ export default function Hero() {
           slidesPerView={1}
           loop={true}
           autoplay={{ delay: 6000, disableOnInteraction: false }}
-          speed={2500} // Slow transition
+          speed={2500}
           pagination={{ clickable: true }}
           className="max-w-md mx-auto"
         >
@@ -66,12 +67,12 @@ export default function Hero() {
 
         {/* Tombol login mobile */}
         <div className="mt-6 text-center">
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:scale-105 transition-all duration-300"
           >
             Mulai Sekarang
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -88,12 +89,12 @@ export default function Hero() {
           <p className="text-gray-700 mb-6 text-base md:text-lg leading-relaxed">
             Pantau, rawat, dan dapatkan rekomendasi terbaik untuk tanaman hidroponik Anda — semua dalam satu platform.
           </p>
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="inline-block bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-full font-semibold shadow-md hover:scale-105 transition-all duration-300"
           >
             Mulai Sekarang
-          </a>
+          </Link>
         </div>
 
         {/* Hero Image */}
@@ -112,7 +113,7 @@ export default function Hero() {
           slidesPerView={1}
           loop={true}
           autoplay={{ delay: 7000, disableOnInteraction: false }}
-          speed={2500} // Slow transition
+          speed={2500}
           pagination={{ clickable: true }}
           navigation={true}
           className="max-w-6xl mx-auto"
