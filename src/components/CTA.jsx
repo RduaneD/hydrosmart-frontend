@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom"; // ⬅️ Tambahkan ini
 
 export default function CTA() {
   return (
@@ -15,13 +16,13 @@ export default function CTA() {
           Ambil langkah pertama menuju pertanian cerdas, sehat, dan berkelanjutan dari rumah Anda.
         </p>
 
-        <a
-          href="/register"
+        <Link
+          to="/register"
           className="inline-flex items-center gap-3 bg-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold shadow-xl hover:bg-green-700 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-300"
         >
           Daftar Sekarang
           <ArrowRight className="w-5 h-5" />
-        </a>
+        </Link>
       </div>
     </section>
   );
