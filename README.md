@@ -25,10 +25,10 @@ Rekomendasi Tanaman → model .pkl via Flask
 
 ## 🌐 Link Deployment
 Komponen	URL
-🌱 Frontend (React)	hydrosmart-frontend.vercel.app
-🧠 Backend (Node.js + MongoDB)	hydro-backend-production.up.railway.app
-🧪 Diagnosis Flask API (.h5)	diagnosis-flask-production.up.railway.app
-🌿 Rekomendasi Flask API (.pkl)	plant-recommendation-production-fc59.up.railway.app
+🌱 Frontend (Vite + Tailwind)	https://hydrosmart-frontend.vercel.app
+🧠 Backend (Hapi.js + MongoDB)	https://hydro-backend-production.up.railway.app
+🧪 Diagnosis Flask API (.h5)	https://diagnosis-flask-production.up.railway.app
+🌿 Rekomendasi Flask API (.pkl)	https://plant-recommendation-production-fc59.up.railway.app
 ```
 🔗 Semua endpoint API sudah terintegrasi secara otomatis ke frontend.
 ```
