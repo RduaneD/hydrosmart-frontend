@@ -1,8 +1,12 @@
-### ydroSmart FEBE Monorepo 🌱
-Monorepo resmi untuk tim Frontend & Backend aplikasi HydroSmart.
-Proyek ini membangun sistem manajemen tanaman hidroponik berbasis web menggunakan React.js, Node.js (Hapi.js), dan MongoDB.
+### 🌱 HydroSmart FEBE Monorepo
+
+Monorepo resmi untuk tim Frontend & Backend aplikasi **HydroSmart**.  
+Proyek ini membangun sistem manajemen tanaman hidroponik berbasis web dengan fitur diagnosis dan rekomendasi tanaman secara cerdas.
+
+---
 
 ## 📁 Struktur Folder
+
 ```bash
 /
 ├── frontend/      # Kode UI/Client (React + Tailwind)
@@ -14,87 +18,77 @@ Proyek ini membangun sistem manajemen tanaman hidroponik berbasis web menggunaka
 
 ## 🚀 Tech Stack
 Frontend: React.js + Vite + Tailwind CSS + React Router + Framer Motion + Axios
-Backend: Node.js + Hapi.js + MongoDB Atlas + JWT
-Dokumentasi: Figma (Wireframe), dbdiagram.io (ERD), Swagger/Postman (API Docs)
+Backend: Node.js + Hapi.js + MongoDB Atlas + JWT Auth + REST API
+Machine Learning:
+Diagnosis Penyakit → mobilenetv2_best_model.h5 via Flask
+Rekomendasi Tanaman → model .pkl via Flask
 
-## 🧩 Fitur Frontend
+## 🌐 Link Deployment
+Komponen	URL
+🌱 Frontend (React)	hydrosmart-frontend.vercel.app
+🧠 Backend (Node.js + MongoDB)	hydro-backend-production.up.railway.app
+🧪 Diagnosis Flask API (.h5)	diagnosis-flask-production.up.railway.app
+🌿 Rekomendasi Flask API (.pkl)	plant-recommendation-production-fc59.up.railway.app
+```
+🔗 Semua endpoint API sudah terintegrasi secara otomatis ke frontend.
+```
+
+## 🧩 Fitur Utama
+# 👨‍🌾 Fitur Frontend
+```
 Landing Page: Hero, Carousel, CTA
-Autentikasi: Login & Register
-Dashboard Pengguna: Navigasi, diagnosis, dan histori
-Diagnosis Penyakit: Upload gambar → Hasil diagnosis + rekomendasi
+Autentikasi: Login, Register
+Dashboard Pengguna:
+Diagnosis penyakit tanaman berbasis gambar
+Rekomendasi tanaman berdasarkan kondisi lingkungan
+Riwayat progres dan penyimpanan artikel
 Komponen Modular:
-DiagnosisNavbar.jsx
-DiagnosisResult.jsx
-DiagnosisBrandInfo.jsx
-dll.
+DiagnosisNavbar.jsx, DiagnosisResult.jsx, MyProgressUser.jsx, dll.
+```
 
-## 🛠️ Cara Menjalankan Proyek
-# 1. Clone Repo
+# 🧪 Fitur Backend
+```
+API RESTful (Hapi.js)
+CRUD progres pengguna (MongoDB)
+Integrasi diagnosis & rekomendasi via Flask API
+```
+
+# 🤖 Diagnosis Penyakit (Flask)
+```
+Menggunakan model MobileNetV2 (mobilenetv2_best_model.h5)
+Input: Gambar tanaman → Output: Label penyakit + confidence + saran
+```
+
+# 🌿 Rekomendasi Tanaman (Flask)
+```
+Model .pkl untuk klasifikasi tanaman
+Input: pH, suhu, intensitas cahaya → Output: Nama tanaman optimal
+```
+
+## 🛠️ Cara Menjalankan Proyek Secara Lokal
+# 1️⃣ Clone Repository
 ```bash
 git clone https://github.com/CC25-CF144/hydrosmart-febe.git
 cd hydrosmart-febe
 ```
-
-# 2. Jalankan Frontend
+# 2️⃣ Menjalankan Frontend (React)
 ```bash
 cd frontend
 npm install
-npm install swiper react-router-dom react-feather react-icons
-npm install axios
+npm install swiper react-router-dom react-feather react-icons axios
 npm install -D tailwindcss@3.4.1
 npm run dev
 ```
-
-# 3. Jalankan Backend
+# 3️⃣ Menjalankan Backend (Hapi.js)
 ```bash
 cd backend
 npm install
 node server.js
 ```
-⚠️ Pastikan sudah menyiapkan file .env di folder backend/ untuk koneksi MongoDB Atlas.
 
----
 
-## 📚 Dokumentasi Tambahan
-Wireframe UI: docs/wireframe
-ERD Database: docs/ERD
-API Specs: docs/api-specs
-
-## 👥 Tim FEBE
-Frontend Developers
-Backend Developers
-Documentation & API Writers
-
-## 🤝 Kontribusi
-Fork repo (jika bukan bagian tim)
-Clone dan buat branch fitur baru
+### ⚠️ Pastikan sudah menyiapkan file .env di folder backend/ berisi:
 ```bash
-git checkout -b feature/nama-fitur
-Commit perubahan dan buat Pull Request ke branch main
+PORT=3001
+MONGODB_URI=your_mongodb_uri
 ```
-
-## 🔄 Git Tips & Push
-Menambahkan file baru:
-```bash
-git add src/components/FiturBaru.jsx
-git commit -m "feat: tambah komponen FiturBaru"
-git push origin main
-```
-Update beberapa file:
-```bash
-git add path/to/fileA.jsx path/to/fileB.css
-git commit -m "fix: perbaiki layout Diagnosis"
-git push origin main
-```
-
-## 🛰️ Deployment Target
-Frontend 👉 Vercel
-Backend 👉 Render
-Database 👉 MongoDB Atlas
-
-## 📅 Update Terakhir frontend
-24 Mei 2025
-Tambah halaman login & register
-Navigasi ke dashboard
-Validasi sederhana register
-Struktur modularisasi komponen
