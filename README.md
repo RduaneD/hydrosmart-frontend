@@ -89,7 +89,6 @@ node server.js
 
 ### ⚠️ Pastikan sudah menyiapkan file .env di folder backend/ berisi:
 ```bash
-PORT=3000
-MONGODB_URI=mongodb+srv://rdduan2091:HydroSmart612543@cluster0.ba4f4cg.mongodb.net/hydrosmart?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=hydrosmart_secret_token
+PORT=3001
+MONGODB_URI=your_mongodb_uri
 ```
